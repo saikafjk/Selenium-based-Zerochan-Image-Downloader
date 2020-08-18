@@ -42,7 +42,7 @@ def taker(): # Search the page for downloadable images
     x = 1
 
     while True:
-        if x >= maxPageCount: # Check if max pages is reached
+        if x >= int(maxPageCount): # Check if max pages is reached
             f.close()
             downloader()
         else:
