@@ -23,7 +23,7 @@ def downloader():
     print('\nThank you!')
     print('Going to main...')
     time.sleep(5)
-    main()
+    exit()
 
 def taker(): # Search the page for downloadable images
     print("Searching " + str(maxPageCount) + " pages.")
