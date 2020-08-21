@@ -108,14 +108,22 @@ def login(): # Login to Zerochan
     username = input('Username: ')
     password = input('Password: ')
 
-    driver.get('https://www.zerochan.net/login?ref=%2F')
+    url = 'https://www.zerochan.net/login'
+    driver.get(url)
     uname = driver.find_element_by_name('name')
     uname.send_keys(username) # Change into your own username
     pword = driver.find_element_by_name('password')
     pword.send_keys(password) # Change into your own password
     pword.send_keys(Keys.RETURN)
 
-    searcher(0)
+    urlCheck = driver.current_url
+
+    if urlCheck == url:
+        print('Please check your login credentials and try again.')
+        time.sleep(3)
+        login()
+    else:
+        searcher(0)
 
 
 def dir(): # Make a new directory where to download
