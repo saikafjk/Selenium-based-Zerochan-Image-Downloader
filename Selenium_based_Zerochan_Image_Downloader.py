@@ -139,10 +139,10 @@ def dir(): # Make a new directory where to download
     
     logCheck = input('Do you wish to login? (Y/N) ')
 
-    if logCheck == 'Y' or logCheck == 'y':
+    if logCheck.lower() == 'y':
         login()
         log = true
-    elif logCheck == 'N' or logCheck == 'n':
+    elif logCheck.lower() == 'n':
         searcher(1)
     else:
         dir()
